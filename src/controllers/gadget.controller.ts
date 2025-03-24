@@ -1,13 +1,27 @@
+import { GadgetSchema } from "@prisma/client";
 import { prisma } from "../client";
 import { Response, Request } from "express";
 
 // for get request
-export const getGadget = async (_: Request, res: Response): Promise<void> => {
-    try {
-        const all_data = await prisma.gadget.findMany();
-        res.status(200).json(all_data);
-    } catch (e: any) {
-        res.status(500).json("Internal Server Error");
+/*
+     • Now this method will take care for both routes
+     • If the request query is not empty that means it is a filter query so will call the dedicated function for this route
+     • Else normal GET function will take place
+*/
+export const getGadget = async (req: Request, res: Response): Promise<void> => {
+    if(Object.keys(req.query).length!==0){
+        if(req.query.status){
+            const queryFor = req.query.status as string
+            getStatus(req,res,queryFor)
+        }
+    }else{
+        console.log("Entered")
+        try {
+            const all_data = await prisma.gadget.findMany();
+            res.status(200).json(all_data);
+        } catch (e: any) {
+            res.status(500).json("Internal Server Error");
+        }
     }
 };
 
@@ -143,6 +157,26 @@ export const deleteGadget = async (req: Request, res: Response): Promise<void> =
         res.status(500).json("Server Error while deleting the gadget")
     }
 };
+
+
+const getStatus = async(_:Request,res:Response,q:string)=>{
+   
+    try{
+        const findTheId = await prisma.gadget.findMany({
+            where:{
+                status:q  as GadgetSchema
+            }
+        })
+        if(!findTheId){
+            res.status(404).json("Gadget with this status does not exists !!")
+        }
+        res.status(200).json(findTheId)
+    }catch(e){
+        res.status(500).json("Internal Server Error")
+    }
+}
+
+
 
 // to delete a speicfic data
 export const selfDestruct = async () => { };

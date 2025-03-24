@@ -33,3 +33,8 @@
 <p><b>~ Protect gadget Route</b> All the routes other than GET are protected by the authentication middleware</p>
 <p><b>~ authentication.ts</b> Function that will run before making a request on the protected route. This is responsible to validate the user and control its entry in the route</p>
 <p><b>~ Token Generation Route </b>A simple route to call the generateToken controller. It could be done in the gadget route but organising matters.</p>
+
+
+<h2> ✨ Added Query Route and added CORS</h2>
+<p><b>~ app.ts</b> Just added CORS in case, As of now all origin are allowed, well it is used only when we have a frontned but as of now Just added it for my sake</p>
+<p><b>~ gadget Controller</b> Differentiate the routes, Whether it will be for simple GET or filter GET. Read comments in the file for more details</b>
