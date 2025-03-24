@@ -15,17 +15,11 @@ import express from 'express'
 import dotenv from 'dotenv'
 import gadgetRouteHandler from './routes/gadgetRoute.routes'
 import tokenGeneratorRouteHandler from "./routes/tokenGenerationRoute.routes"
-import cors from 'cors'
 
 const app = express()
 app.use(express.json())
 dotenv.config()
 
-app.use(cors({
-    origin:"*",
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true
-}))
 
 app.use("/gadgets",gadgetRouteHandler)
 app.use("/create-token",tokenGeneratorRouteHandler)

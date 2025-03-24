@@ -15,7 +15,6 @@ export const getGadget = async (req: Request, res: Response): Promise<void> => {
             getStatus(req,res,queryFor)
         }
     }else{
-        console.log("Entered")
         try {
             const all_data = await prisma.gadget.findMany();
             res.status(200).json(all_data);
