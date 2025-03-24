@@ -12,3 +12,16 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum GadgetSchema {
+  Available
+  Deployed
+  Destroyed
+  DeCommissioned
+}
+
+model Gadget {
+  id     String       @id @default(uuid())
+  name   String
+  status GadgetSchema
+}
