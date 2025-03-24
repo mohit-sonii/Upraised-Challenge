@@ -13,14 +13,13 @@
 
 import { Router } from "express"; 
 import { deleteGadget, getGadget, patchGadget, postGadget, selfDestruct } from "../controllers/gadget.controller";
-
 const router = Router()
 
 
 router.route("/").get(getGadget)
 router.route("/").post(postGadget)
-router.route("/").patch(patchGadget)
-router.route("/").delete(deleteGadget)
+router.route("/:id").patch(patchGadget)
+router.route("/:id").delete(deleteGadget)
 router.route("/:id/self-destruct").post(selfDestruct)
 
 

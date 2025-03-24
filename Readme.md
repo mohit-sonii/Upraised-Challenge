@@ -17,4 +17,12 @@
 <p> <b>~ routes folder </b> Their I have defined the routes and their dedicated action as controller</p>
 <p><b>~controllers folder</b> There functions or logic will be written for each request method</p>
 
-<h3> Each file is properly maintained and filled with organised comments. Make sure to get the details from there</h3>
+<h5>Each file is properly maintained and filled with organised comments. Make sure to get the details from there</h5>
+
+<h2> ✨ Controller Logic, Routes and Schema Update</h2>
+<p><b>~ schema.prisma<b> Added a new Field for Gadget<p>
+<p><b>~ Controllers </b> Added Complete Logic for GET, POST, PATCH, DELETE  with comments</p>
+<p><b>~ Routes </b> Updated the route to include the "id" in PATCH and DELETE requests</p>
+<p><b>~ client </b> with this file we can import prisma in the controller  and will able to work with the database model
+. This is the PrismaClient file and a new dependency has to added for this. TAKEN FROM DOCUMENTATION</p>
+

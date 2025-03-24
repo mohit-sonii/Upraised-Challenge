@@ -21,7 +21,8 @@ enum GadgetSchema {
 }
 
 model Gadget {
-  id     String       @id @default(uuid())
-  name   String
-  status GadgetSchema
+  id                 String       @id @default(uuid())
+  name               String
+  status             GadgetSchema
+  deCommissionedTime DateTime?
 }
