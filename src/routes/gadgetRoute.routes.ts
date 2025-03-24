@@ -13,13 +13,14 @@
 
 import { Router } from "express"; 
 import { deleteGadget, getGadget, patchGadget, postGadget, selfDestruct } from "../controllers/gadget.controller";
+import middlewareAuth from "../middleware/authentication";
+
 const router = Router()
 
-
 router.route("/").get(getGadget)
-router.route("/").post(postGadget)
-router.route("/:id").patch(patchGadget)
-router.route("/:id").delete(deleteGadget)
+router.route("/").post(middlewareAuth,postGadget)
+router.route("/:id").patch(middlewareAuth,patchGadget)
+router.route("/:id").delete(middlewareAuth,deleteGadget)
 router.route("/:id/self-destruct").post(selfDestruct)
 
 

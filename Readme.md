@@ -20,9 +20,16 @@
 <h5>Each file is properly maintained and filled with organised comments. Make sure to get the details from there</h5>
 
 <h2> ✨ Controller Logic, Routes and Schema Update</h2>
-<p><b>~ schema.prisma<b> Added a new Field for Gadget<p>
+<p><b>~ schema.prisma</b> Added a new Field for Gadget<p>
 <p><b>~ Controllers </b> Added Complete Logic for GET, POST, PATCH, DELETE  with comments</p>
 <p><b>~ Routes </b> Updated the route to include the "id" in PATCH and DELETE requests</p>
 <p><b>~ client </b> with this file we can import prisma in the controller  and will able to work with the database model
 . This is the PrismaClient file and a new dependency has to added for this. TAKEN FROM DOCUMENTATION</p>
 
+
+<h2> ✨ Added JSON Web Token for Authentication</h2>
+<p><b>~ app.ts</b> Added a new route to create a new token. Route was left the only option because we are not dealing with signin, signup functionalities</p>
+<p><b>~ tokenGeneration Controller</b> A Controller to Generate a token</p>
+<p><b>~ Protect gadget Route</b> All the routes other than GET are protected by the authentication middleware</p>
+<p><b>~ authentication.ts</b> Function that will run before making a request on the protected route. This is responsible to validate the user and control its entry in the route</p>
+<p><b>~ Token Generation Route </b>A simple route to call the generateToken controller. It could be done in the gadget route but organising matters.</p>
