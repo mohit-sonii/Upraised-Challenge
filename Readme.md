@@ -1,4 +1,4 @@
-<h2> ✨ Routes Walkthrough <h2>
+<h2> ✨ Routes Walkthrough </h2>
 <ul>
 <li>GET -> /create-token -> to create a token so that you can have all the routes</li>
 <li> GET -> /gadgets -> to Get all the gadgets</li>
@@ -7,7 +7,7 @@
 <li> DELETE -> /gadgets/:id -> To alter the status from any thing to Decommissioned</li>
 </ul>
 
-<h2> ✨ What is Acheived from the requirements mentioned in the project <h2>
+<h2> ✨ What is Acheived from the requirements mentioned in the project </h2>
 <ul>
 <li> Postgres Database Hosted on dedicated server ✅ Hosted on Neon</li>
 <li> GET/PATCH/DELETE/POST ✅ All Done</li>
@@ -18,7 +18,7 @@
 <li> Are Errors Handled properly ✅ Each controller is enclosed with try_catch block</li>
 </ul>
 
-<h2> ✨ What's Left <h2>
+<h2> ✨ What's Left </h2>
 <ul>
 <li>Self-Destruct Sequence ❌ I couldn't understand the requirement properly</li>
 </ul>
